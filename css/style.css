@@ -1,0 +1,107 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+header img{
+    display: flex;
+    width: 100%;
+    height: auto;
+    /**fade in, pair with keyframes**/
+    animation: fadeIn 3s;
+
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+.nav_links{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/**.card{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}**/
+
+.pricing{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.gallery{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+/**stop animation**/
+@media (prefers-reduced-motion: reduce) {
+    /* styles to apply if the user's settings are set to reduced motion */
+    header img{animation: none;}
+  }
+
+
+@media screen and (min-width: 700px){
+    header img{
+        display: flex;
+        width: 400px;
+        height: auto;
+        margin-right: auto
+    }
+
+    /*set nav to right*/
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    /**pricing is the container**/
+    .pricing{
+        display: flex;
+        flex-wrap: wrap;
+        /**set cards to the center**/
+        justify-content: center;
+        flex-direction: row; /**override line 31 to set into row:
+        .pricing{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }**/
+    }
+
+    /**set cards width*/
+    .card{
+        width: 300px;
+    }
+
+
+
+    /**pricing is the container**/
+    .gallery{
+        display: flex;
+        flex-wrap: wrap;
+        /**set images to the center**/
+        justify-content: center;
+        flex-direction: row;/**override line 37 to set into row:
+        .gallery{
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+        }**/
+    }
+
+    /**set images width*/
+    .gallery img{
+        width: 300px;
+    }
+
+}
